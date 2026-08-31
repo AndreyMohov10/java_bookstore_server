@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: bookstore
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/bookstore
+    username: bookstore
+    password: bookstore
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  jooq:
+    sql-dialect: POSTGRES
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    org.jooq.tools.LoggerListener: DEBUG

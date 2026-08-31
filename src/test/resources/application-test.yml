@@ -1,0 +1,10 @@
+spring:
+  flyway:
+    enabled: true
+    locations:
+      - classpath:db/migration
+      - classpath:test/db/migration
+  jooq:
+    sql-dialect: POSTGRES
+    settings:
+      renderNameStyle: LOWER
