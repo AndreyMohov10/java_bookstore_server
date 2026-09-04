@@ -23,7 +23,7 @@ public class AnalyticsController {
 
     @GetMapping("/authors-sales")
     @Operation(summary = "Статистика продаж по авторам",
-               description = "Выручка, кол-во проданных книг и уникальных названий по каждому автору")
+               description = "Выручка, кол-во проданных книг и уникальных позиций по каждому автору")
     public List<AuthorSalesStatsDto> getAuthorsSalesStats() {
         return analyticsRepository.getAuthorSalesStats();
     }
