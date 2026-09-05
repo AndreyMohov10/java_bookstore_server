@@ -26,7 +26,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
-@WebMvcTest(OrderController.class)
+@WebMvcTest(value = OrderController.class, properties = {
+        "logging.level.root=ERROR"
+})
 @DisplayName("OrderController — MockMvc тесты")
 class OrderControllerTest {
 

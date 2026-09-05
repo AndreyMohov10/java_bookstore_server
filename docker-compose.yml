@@ -17,6 +17,16 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+  server:
+    build: .
+    container_name: bookstore-server
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
 
 volumes:
   postgres_data:

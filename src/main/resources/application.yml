@@ -3,7 +3,7 @@ spring:
     name: bookstore
 
   datasource:
-    url: jdbc:postgresql://localhost:5434/bookstore
+    url: jdbc:postgresql://postgres:5432/bookstore
     username: bookstore
     password: bookstore
     driver-class-name: org.postgresql.Driver
@@ -30,4 +30,13 @@ springdoc:
 
 logging:
   level:
-    org.jooq.tools.LoggerListener: DEBUG
+    root: INFO
+  file:
+    name: logs/bookstore-app.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      file-name-pattern: myapp-%d{yyyy-MM-dd}.%i.log
+      max-history: 30
